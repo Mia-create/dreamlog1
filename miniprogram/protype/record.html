@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记录梦境</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部栏 -->
+    <div class="w-full h-14 flex items-center justify-center border-b border-gray-100 font-bold text-lg sticky top-0 bg-white z-10 rounded-t-2xl">记录梦境</div>
+    <div class="max-w-md mx-auto px-4 py-4">
+        <!-- 梦境描述输入 -->
+        <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
+            <label class="block text-gray-700 mb-2 font-medium">梦境描述</label>
+            <textarea class="w-full h-24 p-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 resize-none text-sm" placeholder="梦里你去了哪里？看到了谁？发生了什么？"></textarea>
+        </div>
+        <!-- 灵感提示词 -->
+        <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
+            <label class="block text-gray-700 mb-2 font-medium">灵感提示词</label>
+            <div class="flex flex-wrap gap-2">
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-blue-100 hover:text-blue-500">森林</button>
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-blue-100 hover:text-blue-500">追逐</button>
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-blue-100 hover:text-blue-500">飞翔</button>
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-blue-100 hover:text-blue-500">海底</button>
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-blue-100 hover:text-blue-500">迷宫</button>
+            </div>
+        </div>
+        <!-- 不想看到的元素（屏蔽词） -->
+        <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
+            <label class="block text-gray-700 mb-2 font-medium">不想看到的元素（可选）</label>
+            <div class="flex flex-wrap gap-2">
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-red-100 hover:text-red-500">黑暗</button>
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-red-100 hover:text-red-500">怪物</button>
+                <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm hover:bg-red-100 hover:text-red-500">恐怖</button>
+            </div>
+        </div>
+        <!-- 生成图片按钮 -->
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium hover:bg-blue-600 mb-4">生成梦境图片</button>
+        <!-- 图片预览 -->
+        <div class="bg-white rounded-xl p-4 mb-4 shadow-sm flex flex-col items-center">
+            <div class="w-full h-40 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">图片预览</div>
+        </div>
+        <!-- 是否公开 -->
+        <div class="bg-white rounded-xl p-4 mb-4 shadow-sm flex items-center justify-between">
+            <span class="text-gray-700">公开分享</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+            </label>
+        </div>
+        <!-- 保存并发布按钮 -->
+        <button class="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600">保存并发布</button>
+    </div>
+</body>
+</html> 

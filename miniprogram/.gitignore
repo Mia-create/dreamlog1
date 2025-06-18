@@ -1,0 +1,4 @@
+.env
+.env.local
+miniprogram_npm
+node_modules

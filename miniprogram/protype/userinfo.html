@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 - 梦境记录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #f3f4f6;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .scrollable-content {
+            flex: 1 1 0%;
+            overflow-y: auto;
+            padding-bottom: 80px; /* 为底部导航栏留出空间 */
+        }
+        .bottom-nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 60px;
+            background: #fff;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #666;
+            font-size: 12px;
+            flex: 1;
+            padding: 4px 0;
+        }
+        .nav-item.active {
+            color: #0052d9;
+        }
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col h-full">
+    <!-- 顶部栏 -->
+    <div class="w-full h-14 flex items-center justify-center border-b border-gray-100 font-bold text-lg sticky top-0 bg-white z-10">我的</div>
+
+    <div class="scrollable-content">
+        <!-- 用户信息区 -->
+        <div class="bg-white p-4 mb-4 shadow-sm rounded-b-xl">
+            <div class="flex items-center">
+                <img src="https://picsum.photos/80/80?random=1" alt="用户头像" class="w-20 h-20 rounded-full border-2 border-white shadow-md">
+                <div class="ml-4">
+                    <div class="flex items-center mb-1">
+                        <img src="https://raw.githubusercontent.com/TDesignOteam/tdesign-miniprogram/develop/site/src/images/wechat.png" alt="微信图标" class="w-5 h-5 mr-2">
+                        <h2 class="text-xl font-semibold text-gray-800">微信昵称</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm">记录梦境 · 分享灵感</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 梦境记录区 -->
+        <div class="px-4 py-3">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="text-lg font-medium text-gray-800">我的梦境</h3>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-1 text-sm bg-blue-500 text-white rounded-full shadow-sm">全部</button>
+                    <button class="px-3 py-1 text-sm bg-gray-200 text-gray-600 rounded-full hover:bg-gray-300">公开</button>
+                    <button class="px-3 py-1 text-sm bg-gray-200 text-gray-600 rounded-full hover:bg-gray-300">私密</button>
+                </div>
+            </div>
+
+            <!-- 梦境记录列表 -->
+            <div class="space-y-3">
+                <!-- 梦境卡片1 (公开) -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/201/350/200" alt="梦境图片" class="w-full h-40 object-cover">
+                        <div class="absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-full opacity-90">公开</div>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-gray-800 text-base font-medium mb-1">神秘森林的奇遇</p>
+                        <p class="text-gray-600 text-sm mb-2">在一片神秘的森林里，我遇到了一只会说话的兔子，它带我穿过了一个彩虹色的隧道...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">2024-03-20 10:30</span>
+                            <button class="text-blue-500 text-sm font-medium">编辑</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 梦境卡片2 (私密) -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/202/350/210" alt="梦境图片" class="w-full h-40 object-cover">
+                        <div class="absolute top-2 right-2 px-2 py-1 bg-gray-500 text-white text-xs rounded-full opacity-90">私密</div>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-gray-800 text-base font-medium mb-1">独自飞翔在云端</p>
+                        <p class="text-gray-600 text-sm mb-2">我在云端自由翱翔，穿过层层白云，看到了远处的彩虹，感觉无比的自由...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">2024-03-19 22:15</span>
+                            <button class="text-blue-500 text-sm font-medium">编辑</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 梦境卡片3 (公开) -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/203/350/190" class="w-full h-40 object-cover" alt="梦境图片"/>
+                        <div class="absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-full opacity-90">公开</div>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-gray-800 text-base font-medium mb-1">深海探险</p>
+                        <p class="text-gray-600 text-sm mb-2">潜入深海，与五彩斑斓的鱼群共舞，发现了沉没的宝藏...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">2024-03-18 08:00</span>
+                            <button class="text-blue-500 text-sm font-medium">编辑</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-sm mt-4 pb-4">没有更多梦境记录了</p>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+            </svg>
+            <span>首页</span>
+        </div>
+        <div class="nav-item active">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <span>我的</span>
+        </div>
+    </div>
+</body>
+</html> 
