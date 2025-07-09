@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "记录梦境",
+  "usingComponents": {
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-switch": "tdesign-miniprogram/switch/switch",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-image": "tdesign-miniprogram/image/image"
+  },
+  "backgroundColor": "#f3f4f6"
+} 

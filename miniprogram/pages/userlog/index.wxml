@@ -1,0 +1,10 @@
+<t-navbar title="我的" fixed z-index="10" />
+<view class="nologin-content">
+  <t-avatar size="96" icon="user" class="nologin-avatar" />
+  <view class="nologin-tip">请登录查看您的个人页面</view>
+  <t-button block theme="success" icon="wechat" class="login-btn" bindtap="onLogin">微信一键登录</t-button>
+</view>
+<t-tabbar value="1" fixed>
+  <t-tabbar-item icon="home" text="首页" url="/pages/index/index" />
+  <t-tabbar-item icon="user" text="我的" />
+</t-tabbar> 

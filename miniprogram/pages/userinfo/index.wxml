@@ -1,0 +1,52 @@
+<t-navbar title="我的" fixed z-index="10" />
+<view class="userinfo-bg">
+  <view class="userinfo-card">
+    <t-avatar image="{{userInfo.avatarUrl}}" size="80" />
+    <view class="userinfo-meta">
+      <view class="nickname-row">
+        <image src="https://raw.githubusercontent.com/TDesignOteam/tdesign-miniprogram/develop/site/src/images/wechat.png" class="wechat-icon" />
+        <text class="nickname">{{userInfo.nickName || '微信昵称'}}</text>
+      </view>
+      <text class="desc">记录梦境 · 分享灵感</text>
+    </view>
+  </view>
+</view>
+<view class="dream-section">
+  <view class="dream-header">
+    <text class="dream-title">我的梦境</text>
+    <view class="filter-tags">
+      <t-tag theme="primary" variant="light" shape="round" bindtap="onFilterTag" data-type="all" class="tag" mark="{{filterType==='all'}}">全部</t-tag>
+      <t-tag theme="default" variant="light" shape="round" bindtap="onFilterTag" data-type="public" class="tag" mark="{{filterType==='public'}}">公开</t-tag>
+      <t-tag theme="default" variant="light" shape="round" bindtap="onFilterTag" data-type="private" class="tag" mark="{{filterType==='private'}}">私密</t-tag>
+    </view>
+  </view>
+  <t-cell-group>
+    <view class="dream-list">
+      <block wx:for="{{filteredDreams}}" wx:key="id">
+        <t-cell hover class="mb-3">
+          <t-row align="top">
+            <t-col span="4">
+              <t-image src="{{item.image_url}}" shape="round" style="width:80px;height:60px;object-fit:cover;border-radius:8px;" />
+            </t-col>
+            <t-col span="8">
+              <view class="dream-content">
+                <view class="dream-desc">{{item.text}}</view>
+                <view class="dream-meta">
+                  <text class="dream-time">{{item.timestamp}}</text>
+                  <text class="dream-tag {{item.is_public ? 'public' : 'private'}}">{{item.is_public ? '公开' : '私密'}}</text>
+                  <t-button size="small" theme="primary" variant="outline" class="ml-2" bindtap="onEditDream" data-id="{{item.id}}">编辑</t-button>
+                </view>
+                <view class="dream-desc-sub">{{item.desc}}</view>
+              </view>
+            </t-col>
+          </t-row>
+        </t-cell>
+      </block>
+      <view class="text-center text-gray-400 text-sm mt-4 pb-4">没有更多梦境记录了</view>
+    </view>
+  </t-cell-group>
+</view>
+<t-tabbar value="1" fixed>
+  <t-tabbar-item icon="home" text="首页" url="/pages/index/index" />
+  <t-tabbar-item icon="user" text="我的" />
+</t-tabbar> 

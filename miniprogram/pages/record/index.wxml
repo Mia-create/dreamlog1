@@ -1,0 +1,36 @@
+<t-navbar title="记录梦境" fixed z-index="10" />
+<view class="container">
+  <!-- 梦境描述输入 -->
+  <view class="section">
+    <view class="label">梦境描述</view>
+    <t-textarea placeholder="梦里你去了哪里？看到了谁？发生了什么？" value="{{desc}}" bindinput="onDescInput" maxlength="200" />
+  </view>
+  <!-- 灵感提示词 -->
+  <view class="section">
+    <view class="label">灵感提示词</view>
+    <view class="tag-list">
+      <t-tag wx:for="{{inspireTags}}" wx:key="item" theme="default" variant="light" shape="round" bindtap="onInspireTagTap" class="tag">{{item}}</t-tag>
+    </view>
+  </view>
+  <!-- 屏蔽词 -->
+  <view class="section">
+    <view class="label">不想看到的元素（可选）</view>
+    <view class="tag-list">
+      <t-tag wx:for="{{negativeTags}}" wx:key="item" theme="danger" variant="light" shape="round" bindtap="onNegativeTagTap" class="tag">{{item}}</t-tag>
+    </view>
+  </view>
+  <!-- 生成图片按钮 -->
+  <t-button block theme="primary" bindtap="onGenerateImage" class="mb-4">生成梦境图片</t-button>
+  <!-- 图片预览 -->
+  <view class="section">
+    <t-image src="{{imageUrl}}" mode="aspectFill" class="preview-img" wx:if="{{imageUrl}}" />
+    <view class="preview-placeholder" wx:else>图片预览</view>
+  </view>
+  <!-- 公开开关 -->
+  <view class="section flex-between">
+    <view class="label">公开分享</view>
+    <t-switch checked="{{isPublic}}" bindchange="onPublicChange" />
+  </view>
+  <!-- 保存并发布按钮 -->
+  <t-button block theme="success" bindtap="onSave">保存并发布</t-button>
+</view> 

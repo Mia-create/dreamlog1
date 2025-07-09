@@ -1,14 +1,15 @@
 {
-  "navigationBarTitleText": "梦境记录",
+  "navigationBarTitleText": "我的",
   "usingComponents": {
     "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-tag": "tdesign-miniprogram/tag/tag",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-row": "tdesign-miniprogram/row/row",
     "t-col": "tdesign-miniprogram/col/col",
-    "t-image": "tdesign-miniprogram/image/image",
     "t-button": "tdesign-miniprogram/button/button",
     "t-tabbar": "tdesign-miniprogram/tab-bar/tab-bar"
   },
   "backgroundColor": "#f3f4f6"
-}
+} 

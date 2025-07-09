@@ -1,0 +1,21 @@
+.nologin-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 32px 16px 0 16px;
+}
+.nologin-avatar {
+  margin-bottom: 24px;
+}
+.nologin-tip {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+.login-btn {
+  width: 220px;
+  font-size: 16px;
+  font-weight: 600;
+} 

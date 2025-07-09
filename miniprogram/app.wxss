@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 't-icon';
+  src: url('/assets/fonts/t.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.t-icon,
+[class*="t-icon-"] {
+  font-family: 't-icon' !important;
+}
+
 /**app.wxss**/
 .container {
   height: 100%;
